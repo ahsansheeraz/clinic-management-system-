@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5fff0; }
+        .container { width: 750px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+        a { text-decoration: none; color: #007bff; margin-right: 15px; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ user.first_name }}</h1>
+        <p>Email: {{ user.email }}</p>
+        <p>Role: {{ user.role.name }}</p>
+
+        <h3>Navigation</h3>
+        <a href="{% url 'users:staff_dashboard' %}">Dashboard</a>
+        <a href="{% url 'users:logout' %}">Logout</a>
+
+        <h4>Doctor Management</h4>
+        <ul>
+            <li><a href="{% url 'doctor:doctorleave_list' %}">Doctor Leave</a></li>
+            <li><a href="{% url 'doctor:doctorschedule_list' %}">Doctor Schedule</a></li>
+        </ul>
+            <li><a href="{% url 'patients:patient_list' %}">Patients</a></li>
+    </div>
+</body>
+</html>

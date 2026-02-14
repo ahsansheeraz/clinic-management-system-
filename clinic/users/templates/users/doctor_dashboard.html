@@ -1,0 +1,29 @@
+<!-- users/templates/users/doctor_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f8ff; }
+        .container { width: 700px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+        a { text-decoration: none; color: #007bff; margin-right: 15px; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, Dr. {{ user.first_name }}</h1>
+        <p>Email: {{ user.email }}</p>
+        <p>Role: {{ user.role }}</p>
+
+        <h3>Navigation</h3>
+        <a href="{% url 'users:doctor_dashboard' %}">Dashboard</a>
+        <a href="{% url 'users:logout' %}">Logout</a>
+
+        <hr>
+        <p>Here you can see your appointments, patient records, and schedule.</p>
+        <!-- Later, include patient list, appointments table, etc. -->
+    </div>
+</body>
+</html>
